@@ -38,6 +38,12 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
+            string data = "sashA";       
+            for (int i = 0; i < data.Length; i=i+1)
+            {
+                Console.WriteLine((int)data[i]);
+            }
+            return;
             bool endApp = false;
             // Display title as the C# console calculator app.
             Console.WriteLine("Console Calculator in C#\r");
@@ -45,14 +51,13 @@ namespace Calculator
 
             while (!endApp)
             {
-                // Declare variables and set to empty.
-                string numInput1 = "";
                 string numInput2 = string.Empty;
                 double result = 0;
 
                 // Ask the user to type the first number.
                 Console.Write("Type a number, and then press Enter: ");
-                numInput1 = Console.ReadLine();
+                // Declare variables and set to empty.
+                string numInput1 = Console.ReadLine();
 
                 double cleanNum1 = 0;
                 while (!double.TryParse(numInput1, out cleanNum1))
