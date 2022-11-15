@@ -57,8 +57,6 @@ namespace CalculatorProgram
                 try
                 {
                     result = CalculatorLibrary.Calculator.DoOperation(cleanNum1, cleanNum2, op);
-                    result2 = Cat.Jocker.MyCat("test");
-                    Console.WriteLine(result2);
                     if (double.IsNaN(result))
                     {
                         Console.WriteLine("This operation will result in a mathematical error.\n");
