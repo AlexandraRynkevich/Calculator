@@ -1,49 +1,14 @@
-﻿using System;
+﻿using CalculatorLibrary;
 
-namespace Calculator
+namespace CalculatorProgram
 {
-    class Calculator
-    {
-        public static double DoOperation(double num1, double num2, string op)
-        {
-            double result = double.NaN; // Default value is "not-a-number" if an operation, such as division, could result in an error.
+  
+  
 
-            // Use a switch statement to do the math.
-            switch (op)
-            {
-                case "a":
-                    result = num1 + num2;
-                    break;
-                case "s":
-                    result = num1 - num2;
-                    break;
-                case "m":
-                    result = num1 * num2;
-                    break;
-                case "d":
-                    // Ask the user to enter a non-zero divisor.
-                    if (num2 != 0)
-                    {
-                        result = num1 / num2;
-                    }
-                    break;
-                // Return text for an incorrect option entry.
-                default:
-                    break;
-            }
-            return result;
-        }
-    }
     class Program
     {
         static void Main(string[] args)
         {
-            string data = "sashA";       
-            for (int i = 0; i < data.Length; i=i+1)
-            {
-                Console.WriteLine((int)data[i]);
-            }
-            return;
             bool endApp = false;
             // Display title as the C# console calculator app.
             Console.WriteLine("Console Calculator in C#\r");
@@ -51,13 +16,15 @@ namespace Calculator
 
             while (!endApp)
             {
-                string numInput2 = string.Empty;
+                // Declare variables and set to empty.
+                string numInput1 = "";
+                string numInput2 = "";
                 double result = 0;
+                string result2 = "";
 
                 // Ask the user to type the first number.
                 Console.Write("Type a number, and then press Enter: ");
-                // Declare variables and set to empty.
-                string numInput1 = Console.ReadLine();
+                numInput1 = Console.ReadLine();
 
                 double cleanNum1 = 0;
                 while (!double.TryParse(numInput1, out cleanNum1))
@@ -89,7 +56,9 @@ namespace Calculator
 
                 try
                 {
-                    result = Calculator.DoOperation(cleanNum1, cleanNum2, op);
+                    result = CalculatorLibrary.Calculator.DoOperation(cleanNum1, cleanNum2, op);
+                    result2 = Cat.Jocker.MyCat("test");
+                    Console.WriteLine(result2);
                     if (double.IsNaN(result))
                     {
                         Console.WriteLine("This operation will result in a mathematical error.\n");
