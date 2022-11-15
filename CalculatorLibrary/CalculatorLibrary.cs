@@ -36,14 +36,3 @@ namespace CalculatorLibrary
     }
 }
 
-
-namespace Cat
-{
-    public class Jocker
-    {
-        public static string MyCat(string name)
-        {
-            return "Hello World";
-        }
-    }
-}
